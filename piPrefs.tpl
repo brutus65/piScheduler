@@ -22,9 +22,11 @@
   <body>
 
     <section class="container">
-      <h3 style="cursor:pointer" id="main" title="Go to Main Menu">
-           <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-           <i> piSchedule </i><small> -- Preferences and Jobs</small>    
+
+      <h3 style="cursor:pointer;height:32px" id="main" title="Go to Main Menu" >
+          <i> piSchedule </i><small> -- Preferences and Day Schedule</small>
+          <button class="btn btn-default btn-sm dropdown-toggle glyphicon glyphicon-home pull-right" type="button">
+          </button>
       </h3>
 
       <br>

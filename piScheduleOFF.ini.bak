@@ -1,0 +1,15 @@
+  *  Flur Decke 
+Zwischengeschoss; Decke; off
+
+  *  Steckdosen
+Stecker; SteckerC; off
+Stecker; SteckerD; off
+
+  * Wohnzimmer Stehlampe
+Erdgeschoss; Stehlampe; off
+
+
+  * Aussen und Bad
+Aussen; Haustuer; off
+Aussen; Bad;  off,+:2:00
+

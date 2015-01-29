@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>piScheduler Status</title>
+      <title>piScheduler Logs</title>
 
       <!-- optional: Einbinden der jQuery-Bibliothek -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -26,9 +26,11 @@
          <div class="container">
             <div class="row">
 
-               <h3 style="cursor:pointer" id="home" title="Go to Main Menu">
-                  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                  <i> piSchedule </i><small> -- Day List of Jobs</small></h3>
+               <h3 style="cursor:pointer;height:32px" id="home" title="Go to Main Menu" >
+                  <i> piSchedule </i><small> -- Day List of Jobs</small>
+                  <button class="btn btn-default btn-sm dropdown-toggle glyphicon glyphicon-home pull-right" type="button">
+                  </button>
+               </h3>
 
                <ul class="nav nav-pills">
 
@@ -69,6 +71,7 @@
             </div>
          </div>
 
+
          <h4>{{selectedDay}}</h4>
 
          <script>
@@ -76,6 +79,7 @@
                location.replace('/')
             });
 
+            // with page loading display "Today" logs
             $(document).ready(function() {
                var href = location.href;
                if (href.substring(8).split("/")[1] == "logs")
@@ -119,9 +123,10 @@
 
       </section>
 
-      <section id="logList">
+      <section class="container" id="logList">
          {{!logList}}
       </section>
    </body>
 
 </html>
+

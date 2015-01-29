@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>piScheduler Status</title>
+      <title>piScheduler</title>
 
       <!-- optional: Einbinden der jQuery-Bibliothek -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -62,23 +62,34 @@
             </div>
 
             <ul class="nav nav-pills">
-               <li role="presentation" class="active"><a href="/prefs">Preferences and Jobs</a></li>
+               <li role="presentation" class="active"><a href="/prefs">Day Schedule / Prefs</a></li>
+
+               <li role="presentation" class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-expanded="false" 
+                     href="#"  title="Add/Edit 'Schedule' (INI-File) -- Add 'Job' to Day Schedule">Setup Schedule/Job<span class="caret"></span>
+                  </a>
+                  <ul id="editMenu" class="dropdown-menu" role="menu">
+                     &&iniFileList&&
+                  </ul>
+               </li>
+
+
                <li role="presentation"><a href="/logs">Day Logs</a></li>
                <li role="presentation"><a href={{pilight}}>pilight</a></li>
 
-  <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-     Docu <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu" role="menu">
-        <li role="presentation"><a href="https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.2/piScheduler.md.html">Overview</a></li>
-        <li role="presentation"><a href="https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.2/piScheduleExamples.md.html">Schedule Examples</a></li>
-        <li role="presentation"><a href="https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.2/piScheduleFeatures.md.html">Schedule Features</a></li>
-
-    </ul>
-  </li>
-
-
+               <li role="presentation" class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    Docu <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                       <li role="presentation">
+                          <a role="menuitem" style="cursor:pointer;" onclick="openHelp('Overview')">&nbsp; 'Overview' &nbsp;</a>
+                          <a role="menuitem" style="cursor:pointer;" onclick="openHelp('Edit')">&nbsp; Edit 'Day Schedule' &nbsp;</a>
+                          <a role="menuitem" style="cursor:pointer;" onclick="openHelp('Examples')">&nbsp; Schedule Examples &nbsp;</a>
+                          <a role="menuitem" style="cursor:pointer;" onclick="openHelp('Features')">&nbsp; Schedule Features &nbsp;</a>
+                       </li>
+                  </ul>
+               </li>
 
             </ul>
 
@@ -94,16 +105,20 @@
             location.replace('/')
          });
 
-         $('#daySelect').on('click', 'li', function(event) {
 
-            var $target = $(event.currentTarget);
-            var sDay = $target.text().trim()
+         var page = null;
 
-            $target.closest('.btn-group').find('[data-bind="label"]').text($target.text()).end().children('.dropdown-toggle').dropdown('toggle');
-            $('#formAction').attr('action', ('/logList?' + sDay))
-            $('#formAction').submit();
-            return sDay;
-         });
+         function openHelp(name) {
+             var main = "https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.3/"
+
+             if (page != null) {page.close()}
+             switch (name) {
+                case 'Overview':  page = window.open(main + "piScheduleOverview.md.html",'piScheduleDocu');break;
+                case 'Edit':      page = window.open(main + "piScheduleEdit.md.html",'piScheduleDocu');break;
+                case 'Examples':  page = window.open(main + "piScheduleExamples.md.html",'piScheduleDocu');break;
+                case 'Features':  page = window.open(main + "piScheduleFeatures.md.html",'piScheduleDocu');break;
+             }
+          }
 
       </script>
 
@@ -111,3 +126,4 @@
    </body>
 
 </html>
+

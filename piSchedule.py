@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-''' Copyright (C) 2014 gWahl
+''' Copyright (C) 2015 gWahl
 
     'piSchedule'  is an python extension for pilight 
       Installed on RaspberryPI together with pilight it supports time scheduled
@@ -15,7 +15,7 @@
          Also switching based on sunrise/sunset is possible. 'ephem' is used. 
          Details see [pyphem](http://rhodesmill.org/pyephem/)
 
-    See 'README.md'  for more details and installation
+    See 'piSchedule.MD'  for more details and installation
 '''
 # ------------------------------------------------------------------------------
 from __future__ import print_function
@@ -78,7 +78,7 @@ piSet,piGet=piParam()
 
 # globals
 #---------------------------------
-__version__ = '0.2'
+__version__ = '0.3'
 prefs = []
 jobs  = []   # store scheduled tasks
 sched = BackgroundScheduler()
@@ -366,9 +366,12 @@ def next_switchTime():
        # handle log files
        try:
            os.remove(logFile())
+           now = datetime.datetime.now()
+           f = open(logFile(), 'a')
+           f.write(str(now)[0:19] + "\n")
+           f.close()
        except:
            pass
-
 
     piSet('nextSwitchTime', nextSwitchTime)
     return nextSwitchTime
@@ -383,7 +386,7 @@ def updateJobsListing():
        " (", str(piGet('nextSwitchTime'))[:19] + ")", " " + prefs['server'] + ":" 
           + str(int(prefs['port_pilight'])+2),
        "\n" + piGet('geo_message'),
-       "\n" + "\033[1m  Current Jobs \033[0m" + "    [" + str(piGet('job_file')) + "]    [" + logFile() +"]")
+       "\n" + "\033[1m  Day Schedule \033[0m" + "    [" + str(piGet('job_file')) + "]    [" + logFile() +"]")
 
     if len(sched.get_jobs()) == 0:
        pass 
@@ -512,7 +515,7 @@ def jobs_serve(jobs_event, name):
                   else:
                       cmsg = message[8:].replace("%20","")
                       job_commands(cmsg, name)
-                      reply = "Control Done: ", cmsg
+                      reply = ("control:" + cmsg)
 
                elif message[1:] == 'close':
                    caller = str(listener.last_accepted)
@@ -637,3 +640,4 @@ def main():
 #---------------------------------
 if __name__ == "__main__":
     main()
+
