@@ -4,6 +4,7 @@
 
 For <em>Documentation</em> details, please visit     
 
- * [Overview](https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.3/piScheduler.md.html)
- * [Scheduling Examples](https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.3/piScheduleExamples.md.html)
- * [Scheduling Features](https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.3/piScheduleFeatures.md.html)
+ * [Overview](https://dl.dropboxusercontent.com/u/35444930/piScheduler/doc_0.3/piSchedulerOverview.md.html)
+ * [Scheduling Examples](https://dl.dropboxusercontent.com/u/35444930/piScheduler/doc_0.3/piScheduleExamples.md.html)
+ * [Scheduling Features](https://dl.dropboxusercontent.com/u/35444930/piScheduler/doc_0.3/piScheduleFeatures.md.html)
+

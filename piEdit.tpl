@@ -247,7 +247,7 @@
         };
 
         function openHelp(name) {
-           var main = "https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.3/"
+           var main = "https://dl.dropboxusercontent.com/u/35444930/piScheduler/doc_0.3/"
 
            switch (name) {
               case 'Job':  window.open(main + "piScheduleFeatures.md.html",'_blank');break;

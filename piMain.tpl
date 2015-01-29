@@ -109,7 +109,7 @@
          var page = null;
 
          function openHelp(name) {
-             var main = "https://dl.dropboxusercontent.com/u/35444930/piScheduler_doc_0.3/"
+             var main = "https://dl.dropboxusercontent.com/u/35444930/piScheduler/doc_0.3/"
 
              if (page != null) {page.close()}
              switch (name) {
