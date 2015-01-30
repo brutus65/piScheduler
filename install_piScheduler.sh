@@ -20,6 +20,12 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
 
+echo Download piScheduler etc .. 
+
+wget https://dl.dropboxusercontent.com/u/35444930/piScheduler/piScheduler.zip
+unzip piScheduler.zip
+chmod 744 tmuxStart.sh
+
 echo  ... piScheduler -- install some python supporting software
 sudo apt-get install python-dev
 sudo apt-get install python-pip
@@ -42,4 +48,12 @@ sudo pip install pbkdf2
 
 echo  ... piScheduler  -- install 'bottle'
 sudo pip install bottle
+
+echo  ... change to piSchedule directory
+cd piScheduler
+
+echo  ... " Start piScheduler with Setup Prefs"
+echo  ... "    python piSetup.py Location=[yourTown] LogID=[yourIDcode]"
+echo  ... " Run piSchedule.py to configure your >piSchedule.ini< settings"
+echo  ... "    python piSchedule.py"
 
