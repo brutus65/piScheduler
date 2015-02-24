@@ -1,4 +1,4 @@
-*piSchedule*   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <small>*A python extension* for __[pilight](http://www.pilight.org/)__ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <small>*Febr 2015*</small></small>
+*piSchedule*   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *A python extension* for __[pilight](http://www.pilight.org/)__ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ==========
 Time scheduled switching of devices made easy with a menu driven approach on a web interface using your smartphone, tablet or PC. 
 
