@@ -42,6 +42,7 @@ sudo pip install apscheduler
 
 echo  ... piScheduler  -- install 'ephem' and 'geopy'
 sudo pip install ephem    #(for python 3)
+sudo pip install geopy
 
 echo  ... piScheduler  -- install 'pbkdf2'
 sudo pip install pbkdf2
