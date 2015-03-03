@@ -21,6 +21,7 @@ responses = piDiscover.piDiscover("urn:schemas-upnp-org:service:pilight:1");
 
 server = responses[0]
 port = int(responses[1]['port_pilight'])+1
+port0 = int(responses[1]['port_pilight'])
 address = (server, port)
 
 
@@ -47,10 +48,10 @@ def getConfig1(typ):
     #  jConfig = '/etc/pilight/config.json'
     #  need to access the 'port' from global
 
-    global server
+    global server, port0
 
     message = 'config'
-    url = ('http://' + server + ':5001/'  + message)
+    url = ('http://' + server + ':' + port0 + '/'  + message)
 
     request = urllib2.Request(url)
     response = urllib2.urlopen(request).read()
