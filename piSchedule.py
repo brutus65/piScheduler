@@ -249,7 +249,7 @@ def pilightSchedule(onTime, actualDevice, currentSwitch):
               print ("   random  : ", nSwitch, " --> deltaTime  : ", deltaTime)
        # ... use deltaTime
 
-       elif nSwitch == 'on' or nSwitch == "off"  :
+       elif nSwitch == 'on' or nSwitch == "off"  or nSwitch == "time" :
           pass
        else:
           try: 
